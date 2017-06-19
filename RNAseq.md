@@ -11,3 +11,7 @@ When the RNAseq data are available (hopefully timorrow), I plan to do the follow
 * Quantify expression levels using joint transcriptome assembly and HTseq
 
 Hopefully these exercises will help me identify some female-specific candidates. Next step would be to try to amplify the candidate(s) in male and female XB with the hope that I can get a sex-specific amplification. The primers used for this could also be used for checking the CRISPR/Cas mutations.
+
+This site gives directions for outputing a list of query sequences with no hit: https://www.biostars.org/p/16203/
+
+
