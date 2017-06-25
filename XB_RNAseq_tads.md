@@ -46,11 +46,14 @@ and blast in both directions, e.g.:
 # Generate list of unique matches 
 
 This can be done by parsing the output based on the first column (-f 1) as defined by a tab delimiter (-d '	') and .
+```
 cut -d '	' -f 1 FILENAME | uniq > uniq.txt
+```
 
 # Compare the files
+```
 comm -31 female_to_maledda_blast.out female_ids.txt
-
+```
 the -31 flag suppresses column 1 which is unique to file 1 and column 3 which are shared by both files
 
 So we end up with names unique to file 2 (i.e. only in the query but not in the match)
