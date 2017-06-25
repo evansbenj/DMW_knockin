@@ -29,3 +29,15 @@ To make an assembly using both male and female tad data:
 ```
 /home/ben/trinityrnaseq-2.1.1/Trinity --seqType fq --left ../female_tads/Xborealis_female_tads_Mesonephros_R1_trim_paired.fastq.gz,../male_tads/Xborealis_male_tads_Mesonephros_R1_trim_paired.fastq.gz --right ../female_tads/Xborealis_female_tads_Mesonephros_R2_trim_paired.fastq.gz,../male_tads/Xborealis_male_tads_Mesonephros_R2_trim_paired.fastq.gz --CPU 6 --max_memory 40G
 ```
+# Blasting
+
+Make a blast db
+```
+/usr/local/blast/2.3.0/bin/makeblastdb -in Trinity.fasta -dbtype nucl -out Trinity.fasta_male_tads_blastable
+```
+
+and blast in both directions, e.g.:
+
+```
+/usr/local/blast/2.3.0/bin/blastn -query /net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/male_tads/trinity_out_dir/male_tads.fasta -db female_tads.fasta_blastable -outfmt 6 -out maletads_to_femaletads.out
+```
