@@ -45,9 +45,9 @@ and blast in both directions, e.g.:
 
 # Generate list of unique matches 
 
-This can be done by parsing the output based on the first column (-f 1) as defined by a tab delimiter (-d '	') and .
+This can be done by parsing the output based on the first column (-f 1) as defined by a tab delimiter (which is the default, or specify it with =d ' '):
 ```
-cut -d '	' -f 1 FILENAME | uniq > uniq.txt
+cut -f 1 FILENAME | uniq > uniq.txt
 ```
 
 # Compare the files
