@@ -155,10 +155,12 @@ sort bam files
 make a bai file
 ```
 /usr/local/bin/samtools index females_to_combinedtranscriptome_sorted.bam
+
 ```
 
 coverage
-``
+
+```
 samtools depth  females_to_combinedtranscriptome_sorted.bam  |  awk '{sum+=$3} END { print "Average = ",sum/NR}'
 ```
 
