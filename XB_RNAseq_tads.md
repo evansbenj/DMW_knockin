@@ -158,13 +158,13 @@ make a bai file
 
 ```
 
-coverage per site
+coverage per site, including scaffolds with no coverage
 
 ```
-samtools depth females_to_combinedtranscriptome_sorted.bam > females_to_combinedtranscriptome_sorted_depth_per_site.txt
+bedtools genomecov -ibam females_to_combinedtranscriptome_sorted.bam -bga > females_to_combinedtranscriptome_sorted_depth_per_site.txt
 
 ```
-average coverage across all sites
+average coverage across all sites in scaffolds with coverage
 
 ```
 samtools depth  females_to_combinedtranscriptome_sorted.bam  |  awk '{sum+=$3} END { print "Average = ",sum/NR}'
