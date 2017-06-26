@@ -133,7 +133,40 @@ So instead I am going to map the data from each transcriptome to a combined asse
 
 /usr/local/bin/bwa mem -M -t 16 female_and_male_combined.fasta /net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/male_tads/Xborealis_male_tads_Mesonephros_R1_trim_paired.fastq.gz /net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/male_tads/Xborealis_male_tads_Mesonephros_R2_trim_paired.fastq.gz > males_to_combinedtranscriptome.sam
 ```
+make bam files
 
+```
+/usr/local/bin/samtools view -bt female_and_male_combined.fasta -o females_to_combinedtranscriptome.bam females_to_combinedtranscriptome.sam
+
+/usr/local/bin/samtools view -bt female_and_male_combined.fasta -o males_to_combinedtranscriptome.bam males_to_combinedtranscriptome.sam
+```
+
+delete sam files
+```
+rm -f *sam
+```
+
+sort bam files
+```
+/usr/local/bin/samtools sort females_to_combinedtranscriptome.bam -o females_to_combinedtranscriptome_sorted
+
+```
+
+make a bai file
+```
+/usr/local/bin/samtools index females_to_combinedtranscriptome_sorted.bam
+```
+
+coverage
+``
+samtools depth  females_to_combinedtranscriptome_sorted.bam
+```  |  awk '{sum+=$3} END { print "Average = ",sum/NR}'
+```
+
+genotype
+```
+~/samtools_2016/bin/samtools mpileup -d8000 -ugf AO248_newtrim_scaffolds.fa -t DP,AD octomys_WGS_to_newgenome_aln_sorted_dedup.bam | ~/samtools_2016/bcftools-1.3.1/bcftools call -V indels --format-fields GQ -m -O z | ~/samtools_2016/bcftools-1.3.1/bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o oct_WGS_to_newgenome_aln_sorted_dedup.bam.vcf.gz
+```
 
 ### IGNORE BELOW
 
