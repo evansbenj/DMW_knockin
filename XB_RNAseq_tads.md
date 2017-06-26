@@ -159,8 +159,7 @@ make a bai file
 
 coverage
 ``
-samtools depth  females_to_combinedtranscriptome_sorted.bam
-```  |  awk '{sum+=$3} END { print "Average = ",sum/NR}'
+samtools depth  females_to_combinedtranscriptome_sorted.bam  |  awk '{sum+=$3} END { print "Average = ",sum/NR}'
 ```
 
 genotype
