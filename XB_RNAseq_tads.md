@@ -54,7 +54,7 @@ cut -f 1 FILENAME | uniq > uniq.txt
 ```
 grep "^>" male_tads.fasta | sed 's/[>]/\t/g' | cut -f 1 -d " "> male_tads_transcript_names.txt
 ```
-and ghet rid of the tabs:
+and get rid of the tabs:
 ```
 sed -i -e 's/\t//g' male_tads_transcript_names.txt
 ```
@@ -62,7 +62,7 @@ sed -i -e 's/\t//g' male_tads_transcript_names.txt
 
 # Compare the files
 ```
-comm -31 uniq.txt male_tads_transcript_names.txt
+comm -31 uniq.txt male_tads_transcript_names.txt > male_transcripts_with_no_hit_to_female_transcriptome.txt
 ```
 the -31 flag suppresses column 1 which is unique to file 1 and column 3 which are shared by both files
 
