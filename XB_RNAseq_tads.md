@@ -50,6 +50,11 @@ This can be done by parsing the output based on the first column (-f 1) as defin
 cut -f 1 FILENAME | uniq > uniq.txt
 ```
 
+# Generate a list of query names
+```
+grep "^>" male_tads.fasta | sed 's/[>]/\t/g' | cut -f 1 -d " "> male_tads_transcript_names.txt
+```
+
 # Compare the files
 ```
 comm -31 female_to_maledda_blast.out female_ids.txt
