@@ -158,7 +158,13 @@ make a bai file
 
 ```
 
-coverage
+coverage per site
+
+```
+samtools depth females_to_combinedtranscriptome_sorted.bam > females_to_combinedtranscriptome_sorted_depth_per_site.txt
+
+```
+average coverage across all sites
 
 ```
 samtools depth  females_to_combinedtranscriptome_sorted.bam  |  awk '{sum+=$3} END { print "Average = ",sum/NR}'
