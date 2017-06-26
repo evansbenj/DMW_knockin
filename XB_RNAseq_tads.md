@@ -148,7 +148,7 @@ rm -f *sam
 
 sort bam files
 ```
-/usr/local/bin/samtools sort females_to_combinedtranscriptome.bam -o females_to_combinedtranscriptome_sorted
+/usr/local/bin/samtools sort females_to_combinedtranscriptome.bam -o females_to_combinedtranscriptome_sorted.bam
 
 ```
 
