@@ -175,6 +175,13 @@ genotype
 ~/samtools_2016/bin/samtools mpileup -d8000 -ugf AO248_newtrim_scaffolds.fa -t DP,AD octomys_WGS_to_newgenome_aln_sorted_dedup.bam | ~/samtools_2016/bcftools-1.3.1/bcftools call -V indels --format-fields GQ -m -O z | ~/samtools_2016/bcftools-1.3.1/bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o oct_WGS_to_newgenome_aln_sorted_dedup.bam.vcf.gz
 ```
 
+# Get fasta seqs from multifasta file
+
+grep the fill name and then put it in the qw() statement below:
+```
+perl -ne 'if(/^>(\S+)/){$c=grep{/^$1$/}qw(TRINITY_DN94318_c1_g1_i1 len=358 path=[336:0-357] [-1, 336, -2])}print if $c' female_and_male_combined.fasta > TRINITY_DN94318_c1_g1_i1.fa
+```
+
 ### IGNORE BELOW
 
 # Generate list of unique matches 
