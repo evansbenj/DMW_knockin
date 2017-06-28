@@ -181,6 +181,16 @@ grep the fill name and then put it in the qw() statement below:
 ```
 perl -ne 'if(/^>(\S+)/){$c=grep{/^$1$/}qw(TRINITY_DN94318_c1_g1_i1 len=358 path=[336:0-357] [-1, 336, -2])}print if $c' female_and_male_combined.fasta > TRINITY_DN94318_c1_g1_i1.fa
 ```
+# mapping transcripts to XL genome
+
+I have made a blast db out of XL v9.1 and blasted the combined tad transcriptome to it, saving the top hit.
+
+To convert the blast output to unique lines based on the first two columns, do this:
+```
+awk -F"\t" '!seen[$2, $3]++' file > unique.txt
+
+```
+
 
 ### IGNORE BELOW
 
