@@ -181,6 +181,15 @@ grep the fill name and then put it in the qw() statement below:
 ```
 perl -ne 'if(/^>(\S+)/){$c=grep{/^$1$/}qw(TRINITY_DN94318_c1_g1_i1 len=358 path=[336:0-357] [-1, 336, -2])}print if $c' female_and_male_combined.fasta > TRINITY_DN94318_c1_g1_i1.fa
 ```
+
+# Get multiple fasta seqs from multifasta file
+
+```
+perl -ne 'if(/^>(\S+)/){$c=$i{$1}}$c?print:chomp;$i{$_}=1 if @ARGV' ids.file fasta.file
+```
+
+have identifier list in ids.file
+
 # mapping transcripts to XL genome
 
 I have made a blast db out of XL v9.1 and blasted the combined tad transcriptome to it, saving the top hit.
