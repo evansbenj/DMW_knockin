@@ -187,7 +187,7 @@ I have made a blast db out of XL v9.1 and blasted the combined tad transcriptome
 
 To convert the blast output to unique lines based on the first two columns, do this:
 ```
-awk -F"\t" '!seen[$2, $3]++' file > unique.txt
+awk -F"\t" '!seen[$1, $2]++' file > unique.txt
 
 ```
 
