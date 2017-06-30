@@ -29,6 +29,13 @@ To make an assembly using both male and female tad data:
 ```
 /home/ben/trinityrnaseq-2.1.1/Trinity --seqType fq --left ../female_tads/Xborealis_female_tads_Mesonephros_R1_trim_paired.fastq.gz,../male_tads/Xborealis_male_tads_Mesonephros_R1_trim_paired.fastq.gz --right ../female_tads/Xborealis_female_tads_Mesonephros_R2_trim_paired.fastq.gz,../male_tads/Xborealis_male_tads_Mesonephros_R2_trim_paired.fastq.gz --CPU 6 --max_memory 40G
 ```
+
+To make an assembly with all of the XB data:
+```
+/home/ben/trinityrnaseq-2.1.1/Trinity --seqType fq --left ../female_tads/Xborealis_female_tads_Mesonephros_R1_trim_paired.fastq.gz,../male_tads/Xborealis_male_tads_Mesonephros_R1_trim_paired.fastq.gz,../male_liver/Xborealis_male_liver_R1_trim_paired.fastq.gz,../female_liver/Xborealis_female_liver_R1_trim_paired.fastq.gz,../male_testis/Xborealis_testis_R1_trim_paired.fastq.gz --right ../female_tads/Xborealis_female_tads_Mesonephros_R2_trim_paired.fastq.gz,../male_tads/Xborealis_male_tads_Mesonephros_R2_trim_paired.fastq.gz,../male_liver/Xborealis_male_liver_R2_trim_paired.fastq.gz,../female_liver/Xborealis_female_liver_R2_trim_paired.fastq.gz,../male_testis/Xborealis_testis_R2_trim_paired.fastq.gz --CPU 6 --max_memory 40G
+```
+
+
 # Blasting
 
 Make a blast db
