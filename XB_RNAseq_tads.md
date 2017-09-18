@@ -207,6 +207,16 @@ awk -F"\t" '!seen[$1, $2]++' file > unique.txt
 
 ```
 
+# Make blast db out of XL genome
+
+in this directory:
+```
+/net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/female_and_male_tads/trinity_out_dir/XL_v9.1/
+```
+
+```
+/usr/local/blast/2.3.0/bin/makeblastdb -in Xla.v91.repeatMasked.fa -dbtype nucl -out Xla.v91.repeatMasked.fa_blastable
+```
 
 ### IGNORE BELOW
 
