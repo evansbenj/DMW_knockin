@@ -218,6 +218,10 @@ in this directory:
 /usr/local/blast/2.3.0/bin/makeblastdb -in Xla.v91.repeatMasked.fa -dbtype nucl -out Xla.v91.repeatMasked.fa_blastable
 ```
 
+```
+/usr/local/blast/2.3.0/bin/blastn -query XXX -db Xla.v91.repeatMasked.fa_blastable -outfmt 6 -out alldata_to_XLv9.1.genome.out
+```
+
 ### IGNORE BELOW
 
 # Generate list of unique matches 
