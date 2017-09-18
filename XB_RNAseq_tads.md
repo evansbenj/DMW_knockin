@@ -219,7 +219,7 @@ in this directory:
 ```
 
 ```
-/usr/local/blast/2.3.0/bin/blastn -query XXX -db Xla.v91.repeatMasked.fa_blastable -outfmt 6 -out alldata_to_XLv9.1.genome.out
+/usr/local/blast/2.3.0/bin/blastn -query alldata.fasta -db /net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/female_and_male_tads/trinity_out_dir/XL_v9.1/Xla.v91.repeatMasked.fa_blastable -outfmt 6 -out alldata_to_XLv9.1.genome.out
 ```
 
 ### IGNORE BELOW
