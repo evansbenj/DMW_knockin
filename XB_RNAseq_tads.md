@@ -217,10 +217,28 @@ in this directory:
 ```
 /usr/local/blast/2.3.0/bin/makeblastdb -in Xla.v91.repeatMasked.fa -dbtype nucl -out Xla.v91.repeatMasked.fa_blastable
 ```
+and do the blast
 
 ```
 /usr/local/blast/2.3.0/bin/blastn -query alldata.fasta -db /net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/female_and_male_tads/trinity_out_dir/XL_v9.1/Xla.v91.repeatMasked.fa_blastable -outfmt 6 -out alldata_to_XLv9.1.genome.out
 ```
+
+# Blast alldata RNA assembly to XL unigene (Nov 3, 2013) to get gene annotations
+
+in this directory:
+```
+/net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/alldata/XL_unigene
+```
+
+make a blast db
+```
+/usr/local/blast/2.3.0/bin/makeblastdb -in Xl.seq.uniq -dbtype nucl -out Xl.seq.uniq_blastable
+```
+and do the blast
+```
+/usr/local/blast/2.3.0/bin/blastn -query alldata.fasta -db /net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/alldata/XL_unigene/Xl.seq.uniq_blastable -outfmt 6 -out alldata_to_XLunigene.out
+```
+
 
 ### IGNORE BELOW
 
