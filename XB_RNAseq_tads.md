@@ -236,7 +236,7 @@ make a blast db
 ```
 and do the blast
 ```
-/usr/local/blast/2.3.0/bin/blastn -query alldata.fasta -db /net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/alldata/XL_unigene/Xl.seq.uniq_blastable -outfmt 6 -out alldata_to_XLunigene.out
+/usr/local/blast/2.3.0/bin/blastn -query alldata.fasta -db /net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/alldata/XL_unigene/Xl.seq.uniq_blastable -outfmt 6 -out alldata_to_XLunigene.out -task dc-megablast
 ```
 
 
