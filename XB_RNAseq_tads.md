@@ -1,3 +1,8 @@
+# working directory
+`
+/net/infofile4-inside/volume1/scratch/ben/2017_XB_gonads_tads_and_adults/alldata
+`
+
 # Trimmming XB RNAseq from tads and adults
 
 First, use a bash script to trim the data
