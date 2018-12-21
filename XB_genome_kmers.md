@@ -2,9 +2,19 @@
 
 I'm using the XB female and male genome data to see if I can find regions of chr8L that have a much higher diversity of kmers in the mother than the father.
 
-I'm working with data from BenF that he trimmed with trimmomatic and scythe.  
+Directory:
+```
+/work/ben/2018_Austin_XB_genome/
+```
 
-First step is to combine the reads:
+Prepare the XB genome:
+```
+bwa index -a bwtsw AO248_newtrim_scaffolds.fa
+samtools faidx Xbo.v1.fa
+~/jre1.8.0_111/bin/java -Xmx2g -jar ~/picard-tools-1.131/picard.jar CreateSequenceDictionary REFERENCE=Xbo.v1.fa OUTPUT=Xbo.v1.dict
+```
+
+Combine the reads from BenF that he trimmed with trimmomatic and scythe:
 ```
 zcat BJE3896_DAD_LOO1_left_paired_scythe.fastq.gz BJE3896_DAD_LOO2_left_paired_scythe.fastq.gz BJE3896_DAD_LOO3_left_paired_scythe.fastq.gz BJE3896_DAD_LOO4_left_paired_scythe.fastq.gz  BJE3896_DAD_LOO5_left_paired_scythe.fastq.gz BJE3896_DAD_LOO6_left_paired_scythe.fastq.gz BJE3896_DAD_LOO7_left_paired_scythe.fastq.gz BJE3896_DAD_LOO8_left_paired_scythe.fastq.gz | gzip -c > BJE3896_DAD_allleft.fastq.gz
 ```
