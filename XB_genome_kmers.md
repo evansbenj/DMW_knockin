@@ -39,5 +39,11 @@ To compare two kmer databases I made for mom and dad, I ran this command:
 sbatch run_glistcompare.sh
 ```
 
-This made a 50Gb file called 'Mom_minus_Dad_31_0_diff1.list'
+This made a 50Gb file called 'Mom_minus_Dad_31_0_diff1.list'.  I used this 'run_glistquery.sh' to get this information about this kmer list file:
+```
+Wordlength	31
+NUnique	4462866441
+NTotal	29602576276
+```
 
+I'm trying to instead use a cutoff of 10 (so only kmers that show up 10 times in Mom and never in Dad are kept), just to see if this dramatically changes the file size.
