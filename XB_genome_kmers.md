@@ -50,4 +50,73 @@ I'm trying to instead use a cutoff of 10 (so only kmers that show up 10 times in
 
 # Split Fasta file
 
-I wrote a 
+I wrote a script to split up fasta files:
+```
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use List::MoreUtils qw/ uniq /;
+
+
+
+#  This program reads in a fasta file and splits it into several
+# smaller files of length length.  This is useful for doing knmer quantification.
+# Output files will be printed to "output_directory"
+
+
+
+# run it like this
+# Split_fasta.pl input.fasta length output_directory 
+
+
+my $inputfile = $ARGV[0];
+my $length = $ARGV[1]; # this how many lines each subset file will have
+my $outputdirectory = $ARGV[2];
+
+unless (open DATAINPUT, $inputfile) {
+	print 'Can not find the input file.\n';
+	exit;
+}
+
+
+my $filecounter=0;
+my $linecounter=0;
+my $header;
+my @temp;
+my $outputfile;
+my $line;
+
+# Read in datainput file
+
+while ( my $line = <DATAINPUT>) {
+	if($line =~ '>'){
+		# print HEADER to output file
+		$filecounter+=1;
+		# parse header
+		chomp($line);
+		@temp=split('>',$line);
+		$header=$temp[1];
+		unless (open(OUTFILE, ">".$outputdirectory."\/".$header."_".$filecounter))  {
+			print "I can\'t write to $outputfile\n";
+			exit;
+		}
+		print OUTFILE ">".$header."_".$filecounter."\n";
+		$linecounter=0;
+	}
+	elsif($linecounter < $length){
+		print OUTFILE $line;
+		$linecounter+=1;
+	}	
+	else{	
+		$filecounter+=1;
+		unless (open(OUTFILE, ">".$outputdirectory."\/".$header."_".$filecounter))  {
+			print "I can\'t write to $outputfile\n";
+			exit;
+		}
+		print OUTFILE ">".$header."_".$filecounter."\n";
+		print OUTFILE $line;
+		$linecounter=0;
+	}
+}		
+
+```
