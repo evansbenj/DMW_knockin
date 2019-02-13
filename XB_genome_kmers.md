@@ -47,3 +47,7 @@ NTotal	29602576276
 ```
 
 I'm trying to instead use a cutoff of 10 (so only kmers that show up 10 times in Mom and never in Dad are kept), just to see if this dramatically changes the file size.
+
+# Split Fasta file
+
+I wrote a 
