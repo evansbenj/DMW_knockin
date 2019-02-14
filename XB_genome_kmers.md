@@ -233,5 +233,59 @@ run_glistquery.sh
 
 Now I need to get the intersection between the kmer db from each chr bit and the mother-specific kmer db
 ```
+#!/usr/bin/perl
+# This script will run quake on trimmed fq files
 
+my $majorpath = "/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/Chr8L_bits/";
+opendir (DIR, "/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/Chr8L_bits/");
+
+
+
+#my @dirs = readdir(DIR);
+
+my @temp;
+
+@files = glob($majorpath."Chr8L*kmer.list_31.list");
+
+# remove files that begin with a dot
+foreach my $names ( @files){
+    if($names !~ /^[.]/){
+	push @temp,$names;
+    }
+}
+
+#@dirs=@temp;
+
+#print "@dirs";
+
+
+foreach $file (@files){
+    $commandline = "sbatch run_glistcompare_intersection.sh ".$file." ".$file."_intersection_list";
+    print $commandline,"\n";
+    $status = system($commandline);
+}
 ```
+and the bash script:
+```
+#!/bin/sh                                                                                            
+#SBATCH --job-name=run_glistmaker                                                                        
+#SBATCH --nodes=1                                                                                    
+#SBATCH --ntasks-per-node=4                                                                         
+#SBATCH --time=0:10:00                                                                              
+#SBATCH --mem=50gb                                                                                   
+#SBATCH --output=runglistmaker.out                                                               
+#SBATCH --error=runglistmaker.%J.err                                                             
+#SBATCH --account=def-ben                                                                            
+
+../../../GenomeTester4/bin/glistcompare ../Mom_minus_Dad_31_0_diff1.list $1 --intersection -o $2
+```
+
+#Calculate intersection stats
+
+# Summarize the results
+
+Get the number of kmers in each genomic window like this:
+```
+grep 'NUnique' ../Chr8L_bits/*stats /dev/null > genome_kmers.txt
+```
+
