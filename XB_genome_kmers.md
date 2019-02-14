@@ -177,4 +177,7 @@ and this exectutes this bash script (run_glistmaker.sh):
 ```
 
 
+# Count kmers in each of these lists
+
+I need to count the kmers in each of these lists and then count the kmers in the intersection of each of these lists and the unique kmers from the mom genome.  Then I can plot the proportion of female-specific kmers in each windown of the chr.
 
