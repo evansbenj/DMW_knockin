@@ -120,3 +120,61 @@ while ( my $line = <DATAINPUT>) {
 }		
 
 ```
+
+# Count kmers in each fasta file
+
+In this directory on graham:
+```
+/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/ben_scripts
+```
+I used this script to launch kmer counting of all the chr7 bits:
+```
+#!/usr/bin/perl
+# This script will run quake on trimmed fq files
+
+my $majorpath = "/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/Chr8L_bits/";
+opendir (DIR, "/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/Chr8L_bits/");
+
+
+
+#my @dirs = readdir(DIR);
+
+my @temp;
+
+@files = glob($majorpath."Chr8L*");
+
+# remove files that begin with a dot
+foreach my $names ( @files){
+    if($names !~ /^[.]/){
+	push @temp,$names;
+    }
+}
+
+#@dirs=@temp;
+
+#print "@dirs";
+
+
+foreach $file (@files){
+    $commandline = "sbatch run_glistmaker.sh ".$file." ".$file."_kmer.list";
+    print $commandline,"\n";
+    $status = system($commandline);
+}
+```
+and this exectutes this bash script (run_glistmaker.sh):
+```
+#!/bin/sh                                                                                            
+#SBATCH --job-name=run_glistmaker                                                                        
+#SBATCH --nodes=1                                                                                    
+#SBATCH --ntasks-per-node=12                                                                         
+#SBATCH --time=1:00:00                                                                              
+#SBATCH --mem=50gb                                                                                   
+#SBATCH --output=runglistmaker.%J.out                                                               
+#SBATCH --error=runglistmaker.%J.err                                                             
+#SBATCH --account=def-ben                                                                            
+
+../../../GenomeTester4/bin/glistmaker $1 -w 31 -o $2
+```
+
+
+
