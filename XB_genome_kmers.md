@@ -226,7 +226,7 @@ run_glistquery.sh
 #SBATCH --error=runglistquery.%J.err                                                             
 #SBATCH --account=def-ben                                                                            
 
-../../GenomeTester4/bin/glistquery $1 -stat > $2
+../../../GenomeTester4/bin/glistquery $1 -stat > $2
 ```
 
 # Calculate intersection
