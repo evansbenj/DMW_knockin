@@ -289,3 +289,6 @@ Get the number of kmers in each genomic window like this:
 grep 'NUnique' ../Chr8L_bits/*stats /dev/null > genome_kmers.txt
 ```
 
+```
+grep 'NUnique' ../Chr8L_bits/*list_inters.stats /dev/null > MaternalUnique_intersection_kmers.txt
+```
