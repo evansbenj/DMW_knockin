@@ -181,3 +181,52 @@ and this exectutes this bash script (run_glistmaker.sh):
 
 I need to count the kmers in each of these lists and then count the kmers in the intersection of each of these lists and the unique kmers from the mom genome.  Then I can plot the proportion of female-specific kmers in each windown of the chr.
 
+```
+#!/usr/bin/perl
+# This script will run quake on trimmed fq files
+
+my $majorpath = "/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/Chr8L_bits/";
+opendir (DIR, "/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/Chr8L_bits/");
+
+
+
+#my @dirs = readdir(DIR);
+
+my @temp;
+
+@files = glob($majorpath."Chr8L*kmer.list_31.list");
+
+# remove files that begin with a dot
+foreach my $names ( @files){
+    if($names !~ /^[.]/){
+	push @temp,$names;
+    }
+}
+
+#@dirs=@temp;
+
+#print "@dirs";
+
+
+foreach $file (@files){
+    $commandline = "sbatch run_glistquery.sh ".$file." ".$file."_genome.stats";
+    print $commandline,"\n";
+    $status = system($commandline);
+}
+```
+run_glistquery.sh 
+```
+#!/bin/sh                                                                                            
+#SBATCH --job-name=run_glistquery                                                                        
+#SBATCH --nodes=1                                                                                    
+#SBATCH --ntasks-per-node=4                                                                         
+#SBATCH --time=2:00:00                                                                              
+#SBATCH --mem=50gb                                                                                   
+#SBATCH --output=runglistquery.out                                                               
+#SBATCH --error=runglistquery.%J.err                                                             
+#SBATCH --account=def-ben                                                                            
+
+../../GenomeTester4/bin/glistquery $1 -stat > $2
+```
+
+
