@@ -229,4 +229,9 @@ run_glistquery.sh
 ../../GenomeTester4/bin/glistquery $1 -stat > $2
 ```
 
+# Calculate intersection
 
+Now I need to get the intersection between the kmer db from each chr bit and the mother-specific kmer db
+```
+
+```
