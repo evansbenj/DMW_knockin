@@ -292,3 +292,10 @@ grep 'NUnique' ../Chr8L_bits/*stats /dev/null > genome_kmers.txt
 ```
 grep 'NUnique' ../Chr8L_bits/*list_inters.stats /dev/null > MaternalUnique_intersection_kmers.txt
 ```
+
+# print out kmers in a list
+
+Finally figured out how to do this:
+```
+../../../GenomeTester4/bin/glistquery ../Chr8L_bits/Chr8L_29_kmer.list_31.list -f
+```
