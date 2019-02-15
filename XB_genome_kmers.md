@@ -1,3 +1,8 @@
+# extract chr8L
+```
+perl -ne 'if(/^>(\S+)/){$c=grep{/^$1$/}qw(Chr8L)}print if $c' Xbo.v1.fa > XB_Austin_Chr8L.fasta
+```
+
 # Mapping kmer abundances
 
 I'm using the XB female and male genome data to see if I can find regions of chr8L that have a much higher diversity of kmers in the mother than the father.
