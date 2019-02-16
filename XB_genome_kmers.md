@@ -39,6 +39,10 @@ I am working in this directory on graham:
 /home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD
 ```
 
+I just figured out my problem based on this test in the paper describing GenomeTester:  "In this case the difference is calculated with the assumption that the second list is a union containing the first list. Whenever the counts of some k-mer in both lists are equal it means that the first list is the only one among lists in union containing this k-mer and thus it is included in the output list".
+
+So I need to make a union of Mom+Dad before the difference is calculated.  Then using that output list I need to make a union of with each bit of the genome to get a list for each bit that is unique. OK, doable, good to know. 
+
 To compare two kmer databases I made for mom and dad, I ran this command:
 ```
 sbatch run_glistcompare.sh
