@@ -48,7 +48,47 @@ So I need to make a union of Mom+Dad before the difference is calculated.  Then 
 3. Calculate intersection between each chr_bit and Mom_unique (intersection_with_Mom_unique)
 4. Calculate proportion of kmers in intersection_with_Mom_unique kmer divided by total number of kmers in each chr_bit 
 
-To compare two kmer databases I made for mom and dad, I ran this command:
+To compare two kmer databases I made for mom and dad, I first calculated the union of Mom and Dad like this:
+
+```
+sbatch run_glistcompare_union.sh ../BJE3896_DAD_kmerlist_31.list ../../Reads_MOM/BJE3897_Mom_kmerlist_31.list Mom_Dad_Union_add
+```
+where `run_glistcompare_union.sh` is:
+```
+#!/bin/sh                                                                                            
+#SBATCH --job-name=run_glistcompate_union                                                                        
+#SBATCH --nodes=4                                                                                    
+#SBATCH --ntasks-per-node=32                                                                         
+#SBATCH --time=72:00:00                                                                              
+#SBATCH --mem=50gb                                                                                   
+#SBATCH --output=runglistmaker.out                                                               
+#SBATCH --error=runglistmaker.%J.err                                                             
+#SBATCH --account=def-ben                                                                            
+
+../../../GenomeTester4/bin/glistcompare $1 $2 --union --rule add -o $3
+```
+I defined the rule as add even though this is supposed to be the default because the program seems to be doing strange things. After this is done, I need to calculate the difference like this:
+```
+sbatch run_glistcompare_Mom_minus_Dad.sh
+```
+where `run_glistcompare_Mom_minus_Dad.sh` is this:
+```
+#!/bin/sh                                                                                            
+#SBATCH --job-name=run_glistmaker                                                                        
+#SBATCH --nodes=4                                                                                    
+#SBATCH --ntasks-per-node=32                                                                         
+#SBATCH --time=72:00:00                                                                              
+#SBATCH --mem=50gb                                                                                   
+#SBATCH --output=runglistmaker.out                                                               
+#SBATCH --error=runglistmaker.%J.err                                                             
+#SBATCH --account=def-ben                                                                            
+
+../../../GenomeTester4/bin/glistcompare ../../Reads_MOM/BJE3897_Mom_kmerlist_31.list Mom_Dad_Union_add.list --difference
+ --rule first -o Mom_minus_Dad
+ ```
+
+
+
 ```
 sbatch run_glistcompare.sh
 ```
