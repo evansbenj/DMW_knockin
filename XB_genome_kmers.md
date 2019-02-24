@@ -353,3 +353,20 @@ Finally figured out how to do this:
 ```
 ../../../GenomeTester4/bin/glistquery ../Chr8L_bits/Chr8L_29_kmer.list_31.list -f
 ```
+
+# Meryl
+
+On info in this directory:
+```
+/2/scratch/ben/2018_Austin_XB_genome/meryl/Linux-amd64/bin
+```
+
+Making db with this command:
+```
+./meryl count ../../../Trimmed_reads/Reads_DAD/BJE3896_DAD_allleft.fastq.gz k=17 output BJE3896_DAD_allleft_meryl
+
+```
+and this one
+```
+./meryl count ../../../Trimmed_reads/Reads_DAD/BJE3896_DAD_allright.fastq.gz k=17 output BJE3896_DAD_allright_meryl
+```
