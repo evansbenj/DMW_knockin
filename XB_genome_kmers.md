@@ -363,10 +363,12 @@ On info in this directory:
 
 Making db with this command:
 ```
-./meryl count ../../../Trimmed_reads/Reads_DAD/BJE3896_DAD_allleft.fastq.gz k=17 output BJE3896_DAD_allleft_meryl
+./meryl count ../../../Trimmed_reads/Reads_DAD/BJE3896_DAD_allleft.fastq.gz threads=4 memory=128 k=17 output BJE3896_DAD_allleft_meryl
 
 ```
 and this one
 ```
-./meryl count ../../../Trimmed_reads/Reads_DAD/BJE3896_DAD_allright.fastq.gz k=17 output BJE3896_DAD_allright_meryl
+./meryl count ../../../Trimmed_reads/Reads_DAD/BJE3896_DAD_allright.fastq.gz threads=4 memory=128 k=17 output BJE3896_DAD_allright_meryl
 ```
+
+It was necessary to provide the max memory because the build failed without this after about 12 hours on info (hopefully it works with this).
