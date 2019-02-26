@@ -372,3 +372,9 @@ and this one
 ```
 
 It was necessary to provide the max memory because the build failed without this after about 12 hours on info (hopefully it works with this).
+
+Now merge the kmer db from both directions
+```
+./meryl union-sum BJE3897_MOM_allleft_meryl BJE3897_MOM_allright_meryl output BJE3897_MOM_leftright_meryl
+```
+
