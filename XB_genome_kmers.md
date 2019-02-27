@@ -428,9 +428,116 @@ Now make kmer dbs for each section of chr8L
 	```
 
 	* in this directory: '/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/ben_scripts'
-	
+
+or on info:
 ```
-./meryl count XXX threads=4 memory=128 k=17 output XXX
+../meryl count Chr8L_24 threads=4 memory=125 k=17 output Chr8L_24_meryllist
+../meryl count Chr8L_25 threads=4 memory=125 k=17 output Chr8L_25_meryllist
+../meryl count Chr8L_26 threads=4 memory=125 k=17 output Chr8L_26_meryllist
+../meryl count Chr8L_27 threads=4 memory=125 k=17 output Chr8L_27_meryllist
+../meryl count Chr8L_28 threads=4 memory=125 k=17 output Chr8L_28_meryllist
+../meryl count Chr8L_29 threads=4 memory=125 k=17 output Chr8L_29_meryllist
+../meryl count Chr8L_30 threads=4 memory=125 k=17 output Chr8L_30_meryllist
+../meryl count Chr8L_1 threads=4 memory=125 k=17 output Chr8L_1_meryllist
+../meryl count Chr8L_2 threads=4 memory=125 k=17 output Chr8L_2_meryllist
+../meryl count Chr8L_3 threads=4 memory=125 k=17 output Chr8L_3_meryllist
+../meryl count Chr8L_4 threads=4 memory=125 k=17 output Chr8L_4_meryllist
+../meryl count Chr8L_5 threads=4 memory=125 k=17 output Chr8L_5_meryllist
+../meryl count Chr8L_6 threads=4 memory=125 k=17 output Chr8L_6_meryllist
+../meryl count Chr8L_7 threads=4 memory=125 k=17 output Chr8L_7_meryllist
+../meryl count Chr8L_8 threads=4 memory=125 k=17 output Chr8L_8_meryllist
+../meryl count Chr8L_9 threads=4 memory=125 k=17 output Chr8L_9_meryllist
+../meryl count Chr8L_10 threads=4 memory=125 k=17 output Chr8L_10_meryllist
+../meryl count Chr8L_11 threads=4 memory=125 k=17 output Chr8L_11_meryllist
+../meryl count Chr8L_12 threads=4 memory=125 k=17 output Chr8L_12_meryllist
+../meryl count Chr8L_13 threads=4 memory=125 k=17 output Chr8L_13_meryllist
+../meryl count Chr8L_14 threads=4 memory=125 k=17 output Chr8L_14_meryllist
+../meryl count Chr8L_15 threads=4 memory=125 k=17 output Chr8L_15_meryllist
+../meryl count Chr8L_16 threads=4 memory=125 k=17 output Chr8L_16_meryllist
+../meryl count Chr8L_17 threads=4 memory=125 k=17 output Chr8L_17_meryllist
+../meryl count Chr8L_18 threads=4 memory=125 k=17 output Chr8L_18_meryllist
+../meryl count Chr8L_19 threads=4 memory=125 k=17 output Chr8L_19_meryllist
+../meryl count Chr8L_20 threads=4 memory=125 k=17 output Chr8L_20_meryllist
+../meryl count Chr8L_21 threads=4 memory=125 k=17 output Chr8L_21_meryllist
+../meryl count Chr8L_22 threads=4 memory=125 k=17 output Chr8L_22_meryllist
+../meryl count Chr8L_23 threads=4 memory=125 k=17 output Chr8L_23_meryllist
+../meryl count Chr8L_24 threads=4 memory=125 k=17 output Chr8L_24_meryllist
+../meryl count Chr8L_25 threads=4 memory=125 k=17 output Chr8L_25_meryllist
+../meryl count Chr8L_26 threads=4 memory=125 k=17 output Chr8L_26_meryllist
+../meryl count Chr8L_27 threads=4 memory=125 k=17 output Chr8L_27_meryllist
+../meryl count Chr8L_28 threads=4 memory=125 k=17 output Chr8L_28_meryllist
+../meryl count Chr8L_29 threads=4 memory=125 k=17 output Chr8L_29_meryllist
+../meryl count Chr8L_30 threads=4 memory=125 k=17 output Chr8L_30_meryllist
+../meryl count Chr8L_31 threads=4 memory=125 k=17 output Chr8L_31_meryllist
+../meryl count Chr8L_32 threads=4 memory=125 k=17 output Chr8L_32_meryllist
+../meryl count Chr8L_33 threads=4 memory=125 k=17 output Chr8L_33_meryllist
+../meryl count Chr8L_34 threads=4 memory=125 k=17 output Chr8L_34_meryllist
+../meryl count Chr8L_35 threads=4 memory=125 k=17 output Chr8L_35_meryllist
+../meryl count Chr8L_36 threads=4 memory=125 k=17 output Chr8L_36_meryllist
+../meryl count Chr8L_37 threads=4 memory=125 k=17 output Chr8L_37_meryllist
+../meryl count Chr8L_38 threads=4 memory=125 k=17 output Chr8L_38_meryllist
+../meryl count Chr8L_39 threads=4 memory=125 k=17 output Chr8L_39_meryllist
+../meryl count Chr8L_40 threads=4 memory=125 k=17 output Chr8L_40_meryllist
+../meryl count Chr8L_41 threads=4 memory=125 k=17 output Chr8L_41_meryllist
+../meryl count Chr8L_42 threads=4 memory=125 k=17 output Chr8L_42_meryllist
+../meryl count Chr8L_43 threads=4 memory=125 k=17 output Chr8L_43_meryllist
+../meryl count Chr8L_44 threads=4 memory=125 k=17 output Chr8L_44_meryllist
+../meryl count Chr8L_45 threads=4 memory=125 k=17 output Chr8L_45_meryllist
+../meryl count Chr8L_46 threads=4 memory=125 k=17 output Chr8L_46_meryllist
+../meryl count Chr8L_47 threads=4 memory=125 k=17 output Chr8L_47_meryllist
+../meryl count Chr8L_48 threads=4 memory=125 k=17 output Chr8L_48_meryllist
+../meryl count Chr8L_49 threads=4 memory=125 k=17 output Chr8L_49_meryllist
+../meryl count Chr8L_50 threads=4 memory=125 k=17 output Chr8L_50_meryllist
+../meryl count Chr8L_51 threads=4 memory=125 k=17 output Chr8L_51_meryllist
+../meryl count Chr8L_52 threads=4 memory=125 k=17 output Chr8L_52_meryllist
+../meryl count Chr8L_53 threads=4 memory=125 k=17 output Chr8L_53_meryllist
+../meryl count Chr8L_54 threads=4 memory=125 k=17 output Chr8L_54_meryllist
+../meryl count Chr8L_55 threads=4 memory=125 k=17 output Chr8L_55_meryllist
+../meryl count Chr8L_56 threads=4 memory=125 k=17 output Chr8L_56_meryllist
+../meryl count Chr8L_57 threads=4 memory=125 k=17 output Chr8L_57_meryllist
+../meryl count Chr8L_58 threads=4 memory=125 k=17 output Chr8L_58_meryllist
+../meryl count Chr8L_59 threads=4 memory=125 k=17 output Chr8L_59_meryllist
+../meryl count Chr8L_60 threads=4 memory=125 k=17 output Chr8L_60_meryllist
+../meryl count Chr8L_61 threads=4 memory=125 k=17 output Chr8L_61_meryllist
+../meryl count Chr8L_62 threads=4 memory=125 k=17 output Chr8L_62_meryllist
+../meryl count Chr8L_63 threads=4 memory=125 k=17 output Chr8L_63_meryllist
+../meryl count Chr8L_64 threads=4 memory=125 k=17 output Chr8L_64_meryllist
+../meryl count Chr8L_65 threads=4 memory=125 k=17 output Chr8L_65_meryllist
+../meryl count Chr8L_66 threads=4 memory=125 k=17 output Chr8L_66_meryllist
+../meryl count Chr8L_67 threads=4 memory=125 k=17 output Chr8L_67_meryllist
+../meryl count Chr8L_68 threads=4 memory=125 k=17 output Chr8L_68_meryllist
+../meryl count Chr8L_69 threads=4 memory=125 k=17 output Chr8L_69_meryllist
+../meryl count Chr8L_70 threads=4 memory=125 k=17 output Chr8L_70_meryllist
+../meryl count Chr8L_71 threads=4 memory=125 k=17 output Chr8L_71_meryllist
+../meryl count Chr8L_72 threads=4 memory=125 k=17 output Chr8L_72_meryllist
+../meryl count Chr8L_73 threads=4 memory=125 k=17 output Chr8L_73_meryllist
+../meryl count Chr8L_74 threads=4 memory=125 k=17 output Chr8L_74_meryllist
+../meryl count Chr8L_75 threads=4 memory=125 k=17 output Chr8L_75_meryllist
+../meryl count Chr8L_76 threads=4 memory=125 k=17 output Chr8L_76_meryllist
+../meryl count Chr8L_77 threads=4 memory=125 k=17 output Chr8L_77_meryllist
+../meryl count Chr8L_78 threads=4 memory=125 k=17 output Chr8L_78_meryllist
+../meryl count Chr8L_79 threads=4 memory=125 k=17 output Chr8L_79_meryllist
+../meryl count Chr8L_80 threads=4 memory=125 k=17 output Chr8L_80_meryllist
+../meryl count Chr8L_81 threads=4 memory=125 k=17 output Chr8L_81_meryllist
+../meryl count Chr8L_82 threads=4 memory=125 k=17 output Chr8L_82_meryllist
+../meryl count Chr8L_83 threads=4 memory=125 k=17 output Chr8L_83_meryllist
+../meryl count Chr8L_84 threads=4 memory=125 k=17 output Chr8L_84_meryllist
+../meryl count Chr8L_85 threads=4 memory=125 k=17 output Chr8L_85_meryllist
+../meryl count Chr8L_86 threads=4 memory=125 k=17 output Chr8L_86_meryllist
+../meryl count Chr8L_87 threads=4 memory=125 k=17 output Chr8L_87_meryllist
+../meryl count Chr8L_88 threads=4 memory=125 k=17 output Chr8L_88_meryllist
+../meryl count Chr8L_89 threads=4 memory=125 k=17 output Chr8L_89_meryllist
+../meryl count Chr8L_90 threads=4 memory=125 k=17 output Chr8L_90_meryllist
+../meryl count Chr8L_91 threads=4 memory=125 k=17 output Chr8L_91_meryllist
+../meryl count Chr8L_92 threads=4 memory=125 k=17 output Chr8L_92_meryllist
+../meryl count Chr8L_93 threads=4 memory=125 k=17 output Chr8L_93_meryllist
+../meryl count Chr8L_94 threads=4 memory=125 k=17 output Chr8L_94_meryllist
+../meryl count Chr8L_95 threads=4 memory=125 k=17 output Chr8L_95_meryllist
+../meryl count Chr8L_96 threads=4 memory=125 k=17 output Chr8L_96_meryllist
+../meryl count Chr8L_97 threads=4 memory=125 k=17 output Chr8L_97_meryllist
+../meryl count Chr8L_98 threads=4 memory=125 k=17 output Chr8L_98_meryllist
+../meryl count Chr8L_99 threads=4 memory=125 k=17 output Chr8L_99_meryllist
+
 ```
 Now get intersection between MOMunique and each of the kmer db from each section of Chr8L
 ```
