@@ -392,6 +392,43 @@ and as a control do the same for dad
 ./meryl difference BJE3896_DAD_leftright_meryl BJE3897_MOM_leftright_meryl output DAD_unique
 ```
 Now make kmer dbs for each section of chr8L
+	* I did this on graham using this script : 'sbatch_commando_makes_kmer_meryl_lists.pl'
+	```
+	#!/usr/bin/perl
+	# This script will run quake on trimmed fq files
+
+	my $majorpath = "/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/XL_v9.1_chr8L_bits/";
+	opendir (DIR, "/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/XL_v9.1_chr8L_bits/");
+
+
+
+	#my @dirs = readdir(DIR);
+
+	my @temp;
+
+	@files = glob($majorpath."Chr8L*");
+
+	# remove files that begin with a dot
+	foreach my $names ( @files){
+	    if($names !~ /^[.]/){
+		push @temp,$names;
+	    }
+	}
+
+	#@dirs=@temp;
+
+	#print "@dirs";
+
+
+	foreach $file (@files){
+	    $commandline = "sbatch run_meryl_listmaker.sh ".$file." ".$file."_kmer.list";
+	    print $commandline,"\n";
+	    $status = system($commandline);
+	}
+	```
+
+	* in this directory: '/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/ben_scripts'
+	
 ```
 ./meryl count XXX threads=4 memory=128 k=17 output XXX
 ```
