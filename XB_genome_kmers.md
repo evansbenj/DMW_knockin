@@ -377,4 +377,25 @@ Now merge the kmer db from both directions
 ```
 ./meryl union-sum BJE3897_MOM_allleft_meryl BJE3897_MOM_allright_meryl output BJE3897_MOM_leftright_meryl
 ```
+and
+```
+./meryl union-sum BJE3896_DAD_allleft_meryl BJE3896_DAD_allright_meryl output BJE3896_DAD_leftright_meryl
+```
 
+Now subtract dad from mom to get unique kmers in mom
+
+```
+./meryl difference BJE3897_MOM_leftright_meryl BJE3896_DAD_leftright_meryl output MOM_unique
+```
+and as a control do the same for dad
+```
+./meryl difference BJE3896_DAD_leftright_meryl BJE3897_MOM_leftright_meryl output DAD_unique
+```
+Now make kmer dbs for each section of chr8L
+```
+./meryl count XXX threads=4 memory=128 k=17 output XXX
+```
+Now get intersection between MOMunique and each of the kmer db from each section of Chr8L
+```
+./meryl intersect-sum MOMunique bitXXX output MOMunique_bitXXX
+```
