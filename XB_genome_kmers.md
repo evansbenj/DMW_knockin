@@ -576,3 +576,13 @@ do
 done
 ```
 
+Now print out the kmers (meryl print) and convert to a fasta file like this:
+```
+cut -f1 MOMunique_Chr8L_20_kmerz.txt > temp.fasta
+```
+```
+perl -pe 's/\n/\n>\n/g' temp.fasta > MOMunique_Chr8L_20_kmerz.fasta
+```
+
+
+
