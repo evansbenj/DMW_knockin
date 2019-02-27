@@ -553,8 +553,8 @@ To get the total number of kmers in each Chrbit use a bash loop:
 ```
 for file in *meryllist
 do
-	printf "$file " >> kmerz.out
-  ../meryl print "$file" | wc -l >> kmerz.out
+	printf "$file " >> total_kmerz.out
+  ../meryl print "$file" | wc -l >> total_kmerz.out
 done
 ```
 
