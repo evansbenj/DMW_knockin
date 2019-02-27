@@ -567,3 +567,12 @@ do
 done
 ```
 
+To get the total number of kmers in each Chrbit_intersection with Mom_unique use a bash loop:
+```
+for file in MOMunique*meryllist_intersect
+do
+	printf "$file " >> total_Mom_uniqueintersection_kmerz.out
+  ../meryl print "$file" | wc -l >> total_Mom_uniqueintersection_kmerz.out
+done
+```
+
