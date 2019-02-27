@@ -585,7 +585,7 @@ perl -pe 's/\n/\n>\n/g' temp.fasta > MOMunique_Chr8L_20_kmerz.fasta
 ```
 then add a greater than sign in the beginning and delete the one at the end and then assemble like this:
 ```
-/home/ben/trinityrnaseq-2.1.1/Trinity --seqType fa --single MOMunique_Chr8L_20_kmerz.fasta --CPU 6 --max_memory 20G
+/home/ben/trinityrnaseq-2.1.1/Trinity --seqType fa --single MOMunique_Chr8L_20_kmerz.fasta --CPU 6 --max_memory 20G --KMER_SIZE 13 --min_contig_length 10 --min_glue 1
 ```
 
 
