@@ -583,6 +583,9 @@ cut -f1 MOMunique_Chr8L_20_kmerz.txt > temp.fasta
 ```
 perl -pe 's/\n/\n>\n/g' temp.fasta > MOMunique_Chr8L_20_kmerz.fasta
 ```
-
+and assemble like this:
+```
+/home/ben/trinityrnaseq-2.1.1/Trinity --seqType fa --single MOMunique_Chr8L_20_kmerz.fasta --CPU 6 --max_memory 20G
+```
 
 
