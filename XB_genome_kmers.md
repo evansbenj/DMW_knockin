@@ -429,7 +429,16 @@ Now make kmer dbs for each section of chr8L
 
 	* in this directory: '/home/ben/project/ben/2018_Austin_XB_genome/Trimmed_reads/Reads_DAD/ben_scripts'
 
-or on info:
+or on info using a bash command:
+
+```
+for file in *
+do
+  ../meryl count "$file" threads=4 memory=125 k=17 output "$file"_meryllist
+done
+
+```
+or, more laborously:
 ```
 ../meryl count Chr8L_24 threads=4 memory=125 k=17 output Chr8L_24_meryllist
 ../meryl count Chr8L_25 threads=4 memory=125 k=17 output Chr8L_25_meryllist
