@@ -549,3 +549,12 @@ Now print out the kmers
 ../meryl print testintersect/ > test.out
 ```
 
+To get the total number of kmers in each Chrbit use a bash loop:
+```
+for file in *meryllist
+do
+	printf "$file " >> kmerz.out
+  ../meryl print "$file" | wc -l >> kmerz.out
+done
+```
+
