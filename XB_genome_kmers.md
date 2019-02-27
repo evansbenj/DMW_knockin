@@ -436,3 +436,9 @@ Now get intersection between MOMunique and each of the kmer db from each section
 ```
 ./meryl intersect-sum MOMunique bitXXX output MOMunique_bitXXX
 ```
+
+Now print out the kmers
+```
+../meryl print testintersect/ > test.out
+```
+
