@@ -633,9 +633,16 @@ and then replace the space with a tab:
 sed -i 's/ /\t/g' library.txt
 ```
 
-To extract reads try this:
+To extract reads on iqaluk, first load python:
 ```
-cookiecutter extract -i XXX.fastq -f library.txt -o outout_reads 
+module load python/core-gcc630/2.7.14
 ```
-
+and then use this command
+```
+/work/ben/2018_Austin_XB_genome/Cookiecutter/bin/cookiecutter extract -i BJE3897_Mom_allleft.fastq.gz -f MOMunique_Chr8L_20_kmerz_cookielibrary.txt -o MOMunique_Chr8L_20_kmerz_extract
+```
+in this directory:
+```
+/work/ben/2018_Austin_XB_genome/Trimmed_reads
+```
 
