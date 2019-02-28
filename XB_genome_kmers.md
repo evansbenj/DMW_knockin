@@ -598,6 +598,8 @@ module load openmpi/3.1.2
 ```
 ```
 abyss-pe name=Mom_chr8L_20 se=MOMunique_Chr8L_20_kmerz.fasta k=16 c=1
+
+abyss-pe k=64 name=Mom_chr8L_20 in='./MOMunique_Chr8L_20_kmerz_extract_both/BJE3897_Mom_LOO1_left_paired_scythe.filtered.fastq ./MOMunique_Chr8L_20_kmerz_extract_both/BJE3897_Mom_LOO1_right_paired_scythe.filtered.fastq' 
 ```
 you can check what the longest contig is (the length is second value in the header; the third value is the converage) easily like this:
 ```
