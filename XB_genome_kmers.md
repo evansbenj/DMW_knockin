@@ -626,7 +626,11 @@ ATTTTTTACCTGAGTAGGCCTAGAAATAA	1
 ```
 Where there is a tab between the first and second columns.  This is very similar to the output from meryl print output.  You can switch the last column to a 1 like this:
 ```
-awk '{FS="\t"}; {$2="1"}1' temp.txt > temp2.txt
+awk {$2="1"}1' temp.txt > library.txt
+```
+and then replace the space with a tab:
+```
+sed -i 's/ /\t/g' library.txt
 ```
 
 To extract reads try this:
