@@ -603,3 +603,17 @@ you can check what the longest contig is (the length is second value in the head
 ```
 cut -d" " -f2 Mom_chr8L_20-3.fa | sort -n | tee >(echo "max=$(tail -1)")
 ```
+
+# Extracting reads based on a kmer list
+
+The abyss assemblies were shitty because theyonly include kmers that have unique sites in the female but not the flanking sequences that are also useful. So I am going to use CookieCutter to pull out raw reads based on kmers and then assemble these reads.  The latest version of Cookiecutter has a bug so I instead had to locally install version 1 release: 'https://github.com/ad3002/Cookiecutter/blob/master/create_package.sh'
+
+The first step is to make a kmer library which looks like this:
+```
+TACCTGAGTAGGCCTAGAAATAAACATGC	1
+GTTTATTTCTAGGCCTACTCAGGTAAAAA	1
+ATTTTTTACCTGAGTAGGCCTAGAAATAA	1
+...
+```
+Where there is a tab between the first and second columns.  This is very similar to the output from meryl print
+
