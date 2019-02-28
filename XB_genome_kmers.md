@@ -608,6 +608,15 @@ cut -d" " -f2 Mom_chr8L_20-3.fa | sort -n | tee >(echo "max=$(tail -1)")
 
 The abyss assemblies were shitty because theyonly include kmers that have unique sites in the female but not the flanking sequences that are also useful. So I am going to use CookieCutter to pull out raw reads based on kmers and then assemble these reads.  The latest version of Cookiecutter has a bug so I instead had to locally install version 1 release: 'https://github.com/ad3002/Cookiecutter/blob/master/create_package.sh'
 
+This would not install on info so I put it in iqaluk and graham here respectively:
+```
+/work/ben/2018_Austin_XB_genome
+```
+and 
+```
+/home/ben/project/ben/2018_Austin_XB_genome/
+```
+
 The first step is to make a kmer library (library.txt) which looks like this:
 ```
 TACCTGAGTAGGCCTAGAAATAAACATGC	1
