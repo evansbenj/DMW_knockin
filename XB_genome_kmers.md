@@ -588,4 +588,18 @@ then add a greater than sign in the beginning and delete the one at the end and 
 /home/ben/trinityrnaseq-2.1.1/Trinity --seqType fa --single MOMunique_Chr8L_20_kmerz.fasta --CPU 6 --max_memory 20G --KMER_SIZE 13 --min_contig_length 10 --min_glue 1
 ```
 
+# Abyss assembly
 
+On graham, load these modules and execute abyss
+```
+module load abyss/2.0.2
+module load gcc/7.3.0
+module load openmpi/3.1.2
+```
+```
+abyss-pe name=Mom_chr8L_20 se=MOMunique_Chr8L_20_kmerz.fasta k=16 c=1
+```
+you can check what the longest contig is (the length is second value in the header; the third value is the converage) easily like this:
+```
+awk '$2 > max { max = $2; output = $3 } END { print output }' Mom_chr8L_20-3.fa
+```
