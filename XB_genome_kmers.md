@@ -601,5 +601,5 @@ abyss-pe name=Mom_chr8L_20 se=MOMunique_Chr8L_20_kmerz.fasta k=16 c=1
 ```
 you can check what the longest contig is (the length is second value in the header; the third value is the converage) easily like this:
 ```
-awk '$2 > max { max = $2; output = $3 } END { print output }' Mom_chr8L_20-3.fa
+cut -d" " -f2 Mom_chr8L_20-3.fa | sort -n | tee >(echo "max=$(tail -1)")
 ```
