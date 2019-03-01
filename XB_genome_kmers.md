@@ -658,3 +658,11 @@ makeblastdb -in xlaevisMRNA.fasta -input_type fasta -dbtype nucl -out xlaevisMRN
 ```
 blastn -query XXX -db XXX_blastable -outfmt 6 -out XXX -evalue 1e-20 -task megablast
 ```
+```
+blastn -query Mom_chr8L_20-contigs.fa -db XL_mRNA/xlaevisMRNA_blastable -outfmt 6 -out XL_mRNA/Mom_chr8L_20-contigs_to_XL_mRNA -evalue 1e-20 -task megablast
+```
+
+Get longest alignment length like this:
+```
+awk  'BEGIN{max=0}{if(($4)>max)  max=($4)}END {print max}' XL_mRNA/Mom_chr8L_20-contigs_to_XL_mRNA
+```
