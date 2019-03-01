@@ -635,7 +635,7 @@ and then replace the space with a tab:
 sed -i 's/ /\t/g' library.txt
 ```
 
-To extract reads on iqaluk, first load python:
+I did Cookiecutter on iqaluk because I had problems installing it on info. To extract reads on iqaluk, first load python:
 ```
 module load python/core-gcc630/2.7.14
 ```
@@ -648,3 +648,13 @@ in this directory:
 /work/ben/2018_Austin_XB_genome/Trimmed_reads
 ```
 
+I then did the assembly with abyss on graham because it isn't available as a module on iqaluk
+
+And then I made a blast db on info because blast isn't on computecanada:
+in this directory: `/2/scratch/ben/2018_Austin_XB_genome/XL_mRNA`:
+```
+makeblastdb -in xlaevisMRNA.fasta -input_type fasta -dbtype nucl -out xlaevisMRNA_blastable
+```
+```
+blastn -query XXX -db XXX_blastable -outfmt 6 -out XXX -evalue 1e-20 -task megablast
+```
