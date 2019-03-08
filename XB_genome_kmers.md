@@ -624,12 +624,17 @@ The first step is to make a kmer library (library.txt) which looks like this:
 TACCTGAGTAGGCCTAGAAATAAACATGC	1
 GTTTATTTCTAGGCCTACTCAGGTAAAAA	1
 ATTTTTTACCTGAGTAGGCCTAGAAATAA	1
-...
 ```
-Where there is a tab between the first and second columns.  This is very similar to the output from meryl print output.  You can switch the last column to a 1 like this:
-```
-awk '{printf("%s\t%s\n", $2, $1)}’ intersection.txt > intersection.library
+I think the second column of the meryl print output needs to be replaced with a value of 1.
 
+```
+awk {$2="1"}1' temp.txt > library.txt	awk '{printf("%s\t%s\n", $2, $1)}’ intersection.txt > intersection.library
+```	
+
+and then replace the space with a tab:	
+
+```	
+sed -i 's/ /\t/g' library.txt	
 ```
 
 I did Cookiecutter on iqaluk because I had problems installing it on info. To extract reads on iqaluk, first load python:
