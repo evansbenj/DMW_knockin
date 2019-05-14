@@ -668,3 +668,33 @@ Get longest alignment length like this:
 ```
 awk  'BEGIN{max=0}{if(($4)>max)  max=($4)}END {print max}' XL_mRNA/Mom_chr8L_20-contigs_to_XL_mRNA
 ```
+
+# More notes, including on AR
+
+I checked how many kmers are in the MOM and DAD unique_17 mers like this:
+```
+./meryl print MOM_unique_17 | wc -l
+```
+for mom, there are: 945,803,526
+for dad, there are: 1,088,771,912
+
+So the Dad seems to be more polymorphic (?)
+
+I used these commands to make kmer dbs for the hypervariable region of AR isoforms 1 and 2, and then find the intersection of unique kmers in each isoform with the unique kmers in the MOM or DAD.
+```
+./meryl count XB_AR_isoform1_hypervar.fasta threads=4 memory=128 k=17 output XB_AR_isoform1_hypervar_meryl
+./meryl count XB_AR_isoform2_hypervar.fasta threads=4 memory=128 k=17 output XB_AR_isoform2_hypervar_meryl
+./meryl difference XB_AR_isoform1_hypervar_meryl XB_AR_isoform2_hypervar_meryl output iso1_minus_iso2_meryl
+./meryl difference XB_AR_isoform2_hypervar_meryl XB_AR_isoform1_hypervar_meryl output iso2_minus_iso1_meryl
+./meryl intersect-sum DAD_unique_17 iso1_minus_iso2_meryl output DAD_unique_iso1_minus_iso2_meryl_intersection
+./meryl intersect-sum DAD_unique_17 iso2_minus_iso1_meryl output DAD_unique_iso2_minus_iso1_meryl_intersection
+./meryl print MOM_unique_iso1_minus_iso2_meryl_intersection > MOM_unique_iso1_minus_iso2_meryl_intersection.fasta
+./meryl print MOM_unique_iso2_minus_iso1_meryl_intersection > MOM_unique_iso2_minus_iso1_meryl_intersection.fasta
+./meryl print DAD_unique_iso1_minus_iso2_meryl_intersection > DAD_unique_iso1_minus_iso2_meryl_intersection.fasta
+./meryl print DAD_unique_iso2_minus_iso1_meryl_intersection > DAD_unique_iso2_minus_iso1_meryl_intersection.fasta
+
+```
+Weird result - the Mom_unique_17 had no intersection with either isoform (except one that spanned a splice site and thus is not legit.  But the DAD_unique_17 had many (>50) kmers in common with each isoform. WTF?
+
+
+
