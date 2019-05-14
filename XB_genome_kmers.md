@@ -686,6 +686,8 @@ I used these commands to make kmer dbs for the hypervariable region of AR isofor
 ./meryl count XB_AR_isoform2_hypervar.fasta threads=4 memory=128 k=17 output XB_AR_isoform2_hypervar_meryl
 ./meryl difference XB_AR_isoform1_hypervar_meryl XB_AR_isoform2_hypervar_meryl output iso1_minus_iso2_meryl
 ./meryl difference XB_AR_isoform2_hypervar_meryl XB_AR_isoform1_hypervar_meryl output iso2_minus_iso1_meryl
+./meryl intersect-sum MOM_unique_17 iso1_minus_iso2_meryl output MOM_unique_iso1_minus_iso2_meryl_intersection
+./meryl intersect-sum MOM_unique_17 iso2_minus_iso1_meryl output MOM_unique_iso2_minus_iso1_meryl_intersection
 ./meryl intersect-sum DAD_unique_17 iso1_minus_iso2_meryl output DAD_unique_iso1_minus_iso2_meryl_intersection
 ./meryl intersect-sum DAD_unique_17 iso2_minus_iso1_meryl output DAD_unique_iso2_minus_iso1_meryl_intersection
 ./meryl print MOM_unique_iso1_minus_iso2_meryl_intersection > MOM_unique_iso1_minus_iso2_meryl_intersection.fasta
