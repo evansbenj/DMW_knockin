@@ -696,7 +696,7 @@ I used these commands to make kmer dbs for the hypervariable region of AR isofor
 ./meryl print DAD_unique_iso2_minus_iso1_meryl_intersection > DAD_unique_iso2_minus_iso1_meryl_intersection.fasta
 
 ```
-Weird result - the Mom_unique_17 had no intersection with either isoform (except one that spanned a splice site and thus is not legit.  But the DAD_unique_17 had many (>50) kmers in common with each isoform. WTF?
+Weird result - the Mom_unique_17 had no intersection with unique kmers from either isoform (except one that spanned a splice site and thus is not legit.  But the DAD_unique_17 had many (>50) kmers in common with each isoform. WTF?  I then checked if any of these unique isoform kmers that only matched dad are on chr8L and none are. But the AR does map to chr8L (bit 15).
 
 
 
